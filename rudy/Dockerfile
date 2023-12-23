@@ -8,7 +8,7 @@ COPY package*.json ./
 
 COPY . .
 
-#RUN npm install
+#RUN npm ci
 
 RUN npm install
 RUN npm run build

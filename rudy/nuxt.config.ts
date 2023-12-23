@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 
   css: ["~/assets/styles/global.scss"],
   modules: ["@pinia/nuxt", "@nuxt/image", "@sidebase/nuxt-auth"],
+
   auth: {
     baseURL: process.env.AUTH_ORIGIN,
     provider: {
