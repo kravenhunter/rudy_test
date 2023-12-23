@@ -13,8 +13,8 @@ rudy/dist
 rudy/node_modules
 
 # Logs
-logs
-*.log
+rudy/logs
+rudy/*.log
 
 # Misc
 .DS_Store
@@ -24,6 +24,8 @@ logs
 # Local env files
 .env
 .env.*
+!.env.example
+
 rudy/.env
 rudy/.env.*
 !rudy/.env.example

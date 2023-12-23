@@ -1,16 +1,16 @@
-version: "3.3"
+version: "3"
 services:
-  nuxt_app_client:
-    image: nuxt_app_client
-    container_name: nuxt_app_client
-    build: ./rudy
-    ports:
-      - 3000:3000
-    restart: unless-stopped
-    environment:
-      DATABASE_URL: ${DATABASE_URL}
-      # AUTH_ORIGIN: ${AUTH_ORIGIN}
-      # AUTH_SECRET: ${AUTH_SECRET}
+  # nuxt_app_client:
+  #   image: nuxt_app_client
+  #   container_name: nuxt_app_client
+  #   build: ./rudy
+  #   ports:
+  #     - 3000:3000
+  #   restart: unless-stopped
+  #   environment:
+  #     DATABASE_URL: ${DATABASE_URL}
+  #     # AUTH_ORIGIN: ${AUTH_ORIGIN}
+  #     # AUTH_SECRET: ${AUTH_SECRET}
   mysql_server_db:
     image: mysql:8
     restart: unless-stopped
@@ -20,6 +20,15 @@ services:
       MYSQL_DATABASE: rudy # create Db
       MYSQL_ROOT_PASSWORD: root # root pass: root
     ports:
-      - 3309:3306
+      - 3306:3306
     command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     container_name: mysql_server_db
+
+  php_dashboard:
+    image: phpmyadmin:latest
+    restart: unless-stopped
+    ports:
+      - 9001:80
+    environment:
+      - PMA_ARBITRARY=1 #show ServerName field when authorize . ServerName: mysql_server
+    container_name: dashboard
