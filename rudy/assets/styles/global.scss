@@ -1,0 +1,138 @@
+@import "@/assets/styles/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "Museo Sans Cyrl 100";
+  src: url(/assets/styles/font/MuseoSansCyrl-100.ttf);
+}
+@font-face {
+  font-family: "Museo Sans Cyrl 500";
+  src: url(/assets/styles/font/MuseoSansCyrl-500.ttf);
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  & body {
+    margin: 0 auto;
+    padding: 0;
+
+    font-family: "Museo Sans Cyrl 500";
+  }
+}
+
+.default {
+  margin: 0 auto;
+  max-width: 1460px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  margin: 0;
+}
+
+.main {
+  margin: 0 10px;
+}
+
+.calc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 21px;
+  border-radius: 5px;
+  background: #1536df;
+  border: none;
+
+  & span:nth-child(1) {
+    padding-right: 26px;
+  }
+  &:hover {
+    background: none;
+    color: #1536df;
+    border: 1px solid;
+  }
+}
+
+/*
+Editor styles
+*/
+.editor_content_block {
+  border: 1px solid var(--color-dark);
+  height: 400px;
+  overflow: auto;
+}
+.editor_content {
+  max-width: 900px;
+  display: grid;
+}
+.headers_class {
+  margin: 20px 0;
+  line-height: 1;
+  font-size: 1.7rem;
+
+  @media (max-width: 1000px) {
+    font-size: 2.5rem;
+  }
+}
+.paragraph_class {
+  font-size: 18px;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+.italic_rule {
+  font-style: ubuntu-italic;
+}
+.hr_class {
+  border: none;
+  border-top: 2px solid rgba(13, 13, 13, 0.1);
+  margin: 2rem 0;
+}
+.focuse_rule {
+  border: 2px solid aqua;
+}
+.code_block_rule {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: var(--font-standart), monospace;
+
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.blockquotes_rule {
+  padding-left: 1rem;
+  border-left: 2px solid rgba(13, 13, 13, 0.1);
+  margin-left: 4rem;
+}
+.image_rule {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.bullet_class,
+.order_class {
+  color: #0d0d0d;
+  padding: 0 2rem;
+  & li {
+    list-style: revert;
+    &::marker {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+database/mysql
+
+
+# Nuxt dev/build outputs
+rudy/.output
+rudy/.data
+rudy/.nuxt
+rudy/.nitro
+rudy/.cache
+rudy/dist
+
+# Node dependencies
+rudy/node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+rudy/.env
+rudy/.env.*
+!rudy/.env.example
